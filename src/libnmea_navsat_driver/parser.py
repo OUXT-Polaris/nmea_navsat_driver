@@ -152,8 +152,6 @@ def parse_nmea_sentence(nmea_sentence):
     sentence_type = fields[0][3:]
 
     if not sentence_type in parse_maps:
-        rospy.logerr("Sentence type %s not in parse map, ignoring."
-                     % repr(sentence_type))
         return False
 
     parse_map = parse_maps[sentence_type]
